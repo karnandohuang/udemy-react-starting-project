@@ -1,4 +1,5 @@
-import imageX from "../assets/react-core-concepts.png";
+import imageX from "../../assets/react-core-concepts.png";
+import './Header.css'
 
 export const reactDescription = ['Fundamental', 'Crucial', 'Core']
 
