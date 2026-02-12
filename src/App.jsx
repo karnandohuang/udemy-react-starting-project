@@ -24,9 +24,10 @@ function App() {
           <section id="examples">
               <h2>Examples</h2>
               <menu>
-                  <TabButton>
-                      Components
-                  </TabButton>
+                  <TabButton>Components</TabButton>
+                  <TabButton>JSX</TabButton>
+                  <TabButton>Props</TabButton>
+                  <TabButton>State</TabButton>
               </menu>
           </section>
         <h2>Time to get started!</h2>
