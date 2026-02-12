@@ -6,7 +6,7 @@ import CoreConcept from "./components/CoreConcept";
 import TabButton from "./components/TabButton";
 
 function App() {
-    const [selectedTopic, setSelectedTopic] = useState('Please click a button')
+    const [selectedTopic, setSelectedTopic] = useState('components')
     function handleSelect(selectedButton) {
         // console.log('Hello World! - Selected', selectedButton)
         setSelectedTopic(selectedButton)
@@ -31,16 +31,16 @@ function App() {
           <section id="examples">
               <h2>Examples</h2>
               <menu>
-                  <TabButton onSelect={() => handleSelect('Components')}>Components</TabButton>
-                  <TabButton onSelect={() => handleSelect('JSX')}>JSX</TabButton>
-                  <TabButton onSelect={() => handleSelect('Props')}>Props</TabButton>
-                  <TabButton onSelect={() => handleSelect('State')}>State</TabButton>
+                  <TabButton onSelect={() => handleSelect('components')}>Components</TabButton>
+                  <TabButton onSelect={() => handleSelect('jsx')}>JSX</TabButton>
+                  <TabButton onSelect={() => handleSelect('props')}>Props</TabButton>
+                  <TabButton onSelect={() => handleSelect('state')}>State</TabButton>
               </menu>
               <div id="tab-content">
-                  <h3>{EXAMPLES[selectedTopic.toLowerCase()]?.title}</h3>
-                  <p>{EXAMPLES[selectedTopic.toLowerCase()]?.description}</p>
+                  <h3>{EXAMPLES[selectedTopic]?.title}</h3>
+                  <p>{EXAMPLES[selectedTopic]?.description}</p>
                   <pre>
-                      <code>{EXAMPLES[selectedTopic.toLowerCase()]?.code}</code>
+                      <code>{EXAMPLES[selectedTopic]?.code}</code>
                   </pre>
               </div>
           </section>
