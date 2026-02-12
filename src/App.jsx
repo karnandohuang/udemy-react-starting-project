@@ -30,15 +30,12 @@ function App() {
       <main>
           <section id="core-concepts">
               <h2>Core Concepts</h2>
-              <ul>{CORE_CONCEPTS.map(concept => <CoreConcept {...concept}/>)}</ul>
+              <ul>{CORE_CONCEPTS.map((concept) => (<CoreConcept key={concept.title} {...concept}/>))}</ul>
           </section>
           <section id="examples">
               <h2>Examples</h2>
               <menu>
-                  <TabButton onSelect={() => handleSelect('components')} isSelected={selectedTopic === 'components'}>Components</TabButton>
-                  <TabButton onSelect={() => handleSelect('jsx')} isSelected={selectedTopic === 'jsx'}>JSX</TabButton>
-                  <TabButton onSelect={() => handleSelect('props')} isSelected={selectedTopic === 'props'}>Props</TabButton>
-                  <TabButton onSelect={() => handleSelect('state')} isSelected={selectedTopic === 'state'}>State</TabButton>
+                  {Object.entries(EXAMPLES).map(([key, value]) => (<TabButton key={key} onSelect={() => handleSelect(key)} isSelected={selectedTopic === key}>{value.title}</TabButton>))}
               </menu>
               {tabContent}
           </section>
