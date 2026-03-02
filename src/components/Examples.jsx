@@ -2,6 +2,7 @@ import {useState} from "react";
 import {EXAMPLES} from "../data-with-examples";
 import TabButton from "./TabButton";
 import Section from "./Section";
+import Tabs from "./Tabs";
 
 export default function Examples() {
     const [selectedTopic, setSelectedTopic] = useState()
@@ -26,10 +27,20 @@ export default function Examples() {
     return (
         <>
             <Section id="examples" title="Examples">
-                <menu>
-                    {Object.entries(EXAMPLES).map(([key, value]) => (<TabButton key={key} onClick={() => handleSelect(key)} isSelected={selectedTopic === key}>{value.title}</TabButton>))}
-                </menu>
-                {tabContent}
+                <Tabs
+                    ButtonsContainer="menu"
+                    buttons={
+                        Object.entries(EXAMPLES)
+                            .map(([key, value]) => (
+                                <TabButton
+                                    key={key}
+                                    onClick={() => handleSelect(key)}
+                                    isSelected={selectedTopic === key}
+                                >
+                                    {value.title}
+                                </TabButton>
+                            ))}
+                    children={tabContent} />
             </Section>
         </>
     )
